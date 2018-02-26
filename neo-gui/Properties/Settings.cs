@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
+using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Neo.Properties
 {
@@ -35,7 +37,7 @@ namespace Neo.Properties
         {
             this.Chain = section.GetSection("Chain").Value;
             this.CertCache = section.GetSection("CertCache").Value;
-            this.FullLog = section.GetSection("FullLog").Value;
+            this.FullLog = Path.GetDirectoryName(Application.ExecutablePath);
         }
     }
 
